@@ -9,7 +9,8 @@ import { WebBridge } from "@rnbridge/example-web";
 import { createWebView, type RNBridgeWebView } from "@rnbridge/native";
 import React, { useState } from "react";
 import { Button, SafeAreaView, Text } from "react-native";
-import { appBridge } from "src/bridge";
+
+import { appBridge } from "./src/bridge";
 
 export const { WebView, linkWebMethod } = createWebView({
   bridge: appBridge,

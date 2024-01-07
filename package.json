@@ -24,6 +24,7 @@
   },
   "scripts": {
     "ios": "pnpm --filter @rnbridge/example-native ios",
+    "start": "pnpm --filter @rnbridge/example-native start --reset-cache",
     "android": "pnpm --filter @rnbridge/example-native android",
     "web": "pnpm --filter @rnbridge/example-web dev"
   },
