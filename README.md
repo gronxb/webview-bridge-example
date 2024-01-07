@@ -1,7 +1,7 @@
-# RNBridge Example
+# @webview-bridge Example
 
 ## Documentation
-visit [Docs](https://gronxb.github.io/rnbridge)
+visit [Docs](https://gronxb.github.io/webview-bridge)
 
 ## Usage
 Execute the following commands to run React Native and web:

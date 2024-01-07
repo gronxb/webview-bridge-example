@@ -1,5 +1,5 @@
 {
-  "name": "@rnbridge/example",
+  "name": "@webview-bridge/example",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -23,10 +23,10 @@
     "typescript-transform-paths": "^3.4.6"
   },
   "scripts": {
-    "ios": "pnpm --filter @rnbridge/example-native ios",
-    "start": "pnpm --filter @rnbridge/example-native start --reset-cache",
-    "android": "pnpm --filter @rnbridge/example-native android",
-    "web": "pnpm --filter @rnbridge/example-web dev"
+    "ios": "pnpm --filter @webview-bridge/example-native ios",
+    "start": "pnpm --filter @webview-bridge/example-native start --reset-cache",
+    "android": "pnpm --filter @webview-bridge/example-native android",
+    "web": "pnpm --filter @webview-bridge/example-web dev"
   },
   "packageManager": "pnpm@8.10.3"
 }

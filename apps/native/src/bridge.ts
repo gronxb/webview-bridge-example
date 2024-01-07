@@ -1,4 +1,4 @@
-import { bridge } from "@rnbridge/native";
+import { bridge } from "@webview-bridge/react-native";
 import InAppBrowser from "react-native-inappbrowser-reborn";
 
 export const appBridge = bridge({

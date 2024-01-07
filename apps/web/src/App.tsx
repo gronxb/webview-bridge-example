@@ -1,8 +1,8 @@
 import "./App.css";
 import "./bridge"; // execute registerWebMethod
 
-import type { AppBridge } from "@rnbridge/example-native";
-import { linkNativeMethod } from "@rnbridge/web";
+import type { AppBridge } from "@webview-bridge/example-native";
+import { linkNativeMethod } from "@webview-bridge/web";
 import { useEffect, useState } from "react";
 
 const nativeMethod = linkNativeMethod<AppBridge>({
@@ -24,7 +24,9 @@ function App() {
       <h1>{message}</h1>
       <button
         onClick={() => {
-          nativeMethod.openInAppBrowser("https://github.com/gronxb/rnbridge");
+          nativeMethod.openInAppBrowser(
+            "https://github.com/gronxb/webview-bridge",
+          );
         }}
       >
         open InAppBrowser

@@ -48,11 +48,11 @@ importers:
         specifier: ^3.4.6
         version: 3.4.6(typescript@5.3.3)
 
-  packages/native:
+  apps/native:
     dependencies:
-      '@rnbridge/native':
-        specifier: ^1.0.2
-        version: 1.0.2(react-native-webview@13.6.4)(react@18.2.0)
+      '@webview-bridge/react-native':
+        specifier: ^1.0.1
+        version: 1.0.1(react-native-webview@13.6.4)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -81,9 +81,6 @@ importers:
       '@react-native/metro-config':
         specifier: ^0.72.11
         version: 0.72.11(@babel/core@7.23.7)
-      '@rnbridge/example-web':
-        specifier: workspace:^
-        version: link:../web
       '@rnx-kit/metro-config':
         specifier: ^1.3.9
         version: 1.3.14(@react-native/metro-config@0.72.11)(react-native@0.72.5)(react@18.2.0)
@@ -96,6 +93,9 @@ importers:
       '@types/react-test-renderer':
         specifier: ^18.0.0
         version: 18.0.7
+      '@webview-bridge/example-web':
+        specifier: workspace:^
+        version: link:../web
       babel-jest:
         specifier: ^29.2.1
         version: 29.7.0(@babel/core@7.23.7)
@@ -109,11 +109,11 @@ importers:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
 
-  packages/web:
+  apps/web:
     dependencies:
-      '@rnbridge/web':
-        specifier: ^1.0.2
-        version: 1.0.2
+      '@webview-bridge/web':
+        specifier: ^1.0.1
+        version: 1.0.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -121,9 +121,6 @@ importers:
         specifier: ^18.2.0
         version: 18.2.0(react@18.2.0)
     devDependencies:
-      '@rnbridge/example-native':
-        specifier: workspace:^
-        version: link:../native
       '@types/react':
         specifier: ^18.2.15
         version: 18.2.46
@@ -139,6 +136,9 @@ importers:
       '@vitejs/plugin-react-swc':
         specifier: ^3.3.2
         version: 3.5.0(vite@4.5.1)
+      '@webview-bridge/example-native':
+        specifier: workspace:^
+        version: link:../native
       eslint:
         specifier: ^8.45.0
         version: 8.56.0
@@ -2539,20 +2539,6 @@ packages:
       nullthrows: 1.1.1
       react-native: 0.72.5(@babel/core@7.23.7)(@babel/preset-env@7.23.7)(react@18.2.0)
 
-  /@rnbridge/native@1.0.2(react-native-webview@13.6.4)(react@18.2.0):
-    resolution: {integrity: sha512-jVd37uVJ6zD14mUsrEbt+D+aYUH9317oBHZrm6JmbHDSSb5wDy815Q30bVlHiSKGmY7PqUuF6jHXBHqhm1trhw==}
-    peerDependencies:
-      react: '>=18.2.0'
-      react-native-webview: '>=^13.6.2'
-    dependencies:
-      react: 18.2.0
-      react-native-webview: 13.6.4(react-native@0.72.5)(react@18.2.0)
-    dev: false
-
-  /@rnbridge/web@1.0.2:
-    resolution: {integrity: sha512-Vjy43vTqosXByuJ9ERR+SJ3tWnVULyG8jZwbLD9YslPV6S3WhCJ3Whm3bjzUQc0IEwVAK4uT0uumJts5BcrKjw==}
-    dev: false
-
   /@rnx-kit/console@1.0.12:
     resolution: {integrity: sha512-egjvLiXFJwS5TznWnb5I6vLJ2kYW/lYZPa3E1awam+datbyf/elAH4h1ZCfOd/aiTBQur91HwX07k0WgOHJSow==}
     dependencies:
@@ -3135,6 +3121,20 @@ packages:
     transitivePeerDependencies:
       - '@swc/helpers'
     dev: true
+
+  /@webview-bridge/react-native@1.0.1(react-native-webview@13.6.4)(react@18.2.0):
+    resolution: {integrity: sha512-7VRMdSSSLyTdKJNpOU3DipxKugWDwA4pDzsMCXFag19op7CVc5zebZ2/sFZxkOdoqStNWFC6zx7q17P0YyQUGQ==}
+    peerDependencies:
+      react: '*'
+      react-native-webview: '*'
+    dependencies:
+      react: 18.2.0
+      react-native-webview: 13.6.4(react-native@0.72.5)(react@18.2.0)
+    dev: false
+
+  /@webview-bridge/web@1.0.1:
+    resolution: {integrity: sha512-oGIGozc202YHbcrxAWd+H+7wwN64/wqAadND93r7DVXx+gUlJeXz8tPOjwKSrRGuT9KHdXxdYHmGj9DlO8vALw==}
+    dev: false
 
   /abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}

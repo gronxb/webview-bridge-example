@@ -5,8 +5,11 @@
  * @format
  */
 
-import { WebBridge } from "@rnbridge/example-web";
-import { createWebView, type RNBridgeWebView } from "@rnbridge/native";
+import { WebBridge } from "@webview-bridge/example-web";
+import {
+  type BridgeWebView,
+  createWebView,
+} from "@webview-bridge/react-native";
 import React, { useState } from "react";
 import { Button, SafeAreaView, Text } from "react-native";
 
@@ -25,7 +28,7 @@ const WebMethod = linkWebMethod<WebBridge>();
 function App(): JSX.Element {
   const [value, setValue] = useState(0);
 
-  const webviewRef = React.useRef<RNBridgeWebView>(null);
+  const webviewRef = React.useRef<BridgeWebView>(null);
 
   const handleWebAlert = () => {
     if (WebMethod.current.isReady) {
