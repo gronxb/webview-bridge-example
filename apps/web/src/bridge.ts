@@ -1,4 +1,4 @@
-import { registerWebMethod } from "@rnbridge/web";
+import { registerWebMethod } from "@webview-bridge/web";
 
 export const webBridge = registerWebMethod({
   alert: (message: string) => {
