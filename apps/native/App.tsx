@@ -6,21 +6,10 @@
  */
 
 import { WebBridge } from "@rnbridge/example-web";
-import { bridge, createWebView, type RNBridgeWebView } from "@rnbridge/native";
+import { createWebView, type RNBridgeWebView } from "@rnbridge/native";
 import React, { useState } from "react";
 import { Button, SafeAreaView, Text } from "react-native";
-import InAppBrowser from "react-native-inappbrowser-reborn";
-
-export const appBridge = bridge({
-  getMessage: () => {
-    return "I'm from native" as const;
-  },
-  openInAppBrowser: async (url: string) => {
-    if (await InAppBrowser.isAvailable()) {
-      await InAppBrowser.open(url);
-    }
-  },
-});
+import { appBridge } from "src/bridge";
 
 export const { WebView, linkWebMethod } = createWebView({
   bridge: appBridge,

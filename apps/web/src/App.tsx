@@ -1,17 +1,9 @@
 import "./App.css";
+import "./bridge"; // execute registerWebMethod
 
 import type { AppBridge } from "@rnbridge/example-native";
-import { linkNativeMethod, registerWebMethod } from "@rnbridge/web";
+import { linkNativeMethod } from "@rnbridge/web";
 import { useEffect, useState } from "react";
-
-export const webBridge = registerWebMethod({
-  alert: (message: string) => {
-    window.alert(message);
-  },
-  sum: (a: number, b: number) => {
-    return a + b;
-  },
-});
 
 const nativeMethod = linkNativeMethod<AppBridge>({
   throwOnError: ["openInAppBrowser"],
