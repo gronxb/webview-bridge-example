@@ -10,7 +10,7 @@
     "test:type": "tsc --noEmit"
   },
   "dependencies": {
-    "@webview-bridge/web": "^1.0.2",
+    "@webview-bridge/web": "^1.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
