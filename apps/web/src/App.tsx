@@ -31,6 +31,9 @@ function App() {
       >
         open InAppBrowser
       </button>
+      <p>{`isWebViewBridgeAvailable: ${String(
+        nativeMethod.isWebViewBridgeAvailable,
+      )}`}</p>
     </div>
   );
 }
