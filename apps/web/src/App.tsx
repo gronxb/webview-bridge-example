@@ -13,9 +13,11 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    nativeMethod.getMessage().then((message) => {
-      setMessage(message);
-    });
+    if (nativeMethod.isNativeMethodAvailable("getMessage")) {
+      nativeMethod.getMessage().then((message) => {
+        setMessage(message);
+      });
+    }
   }, []);
 
   return (
