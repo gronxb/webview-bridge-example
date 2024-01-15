@@ -51,8 +51,8 @@ importers:
   apps/react-native:
     dependencies:
       '@webview-bridge/react-native':
-        specifier: ^1.0.5
-        version: 1.0.5(react-native-webview@13.6.4)(react@18.2.0)
+        specifier: ^1.0.6
+        version: 1.0.6(react-native-webview@13.6.4)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -118,8 +118,8 @@ importers:
   apps/web:
     dependencies:
       '@webview-bridge/web':
-        specifier: ^1.0.5
-        version: 1.0.5
+        specifier: ^1.0.6
+        version: 1.0.6
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -3158,8 +3158,8 @@ packages:
       - '@swc/helpers'
     dev: true
 
-  /@webview-bridge/react-native@1.0.5(react-native-webview@13.6.4)(react@18.2.0):
-    resolution: {integrity: sha512-yv5MVZnTnWEcp2YInLLPeccbP9nszVB5djYK5yAyP81lGbMncjoC3HjHSx+I+ZCG+qTx17d04NFuZLJLP0FrIw==}
+  /@webview-bridge/react-native@1.0.6(react-native-webview@13.6.4)(react@18.2.0):
+    resolution: {integrity: sha512-T5ol/XKHvhL0AG7c/KW1G9C7faWMdMWyoPxAR6L9p8mrgrvDdcPtL30PDZVlbC20h6eRA3tU2dKq57wUdVta1w==}
     peerDependencies:
       react: '*'
       react-native-webview: '*'
@@ -3168,8 +3168,8 @@ packages:
       react-native-webview: 13.6.4(react-native@0.72.5)(react@18.2.0)
     dev: false
 
-  /@webview-bridge/web@1.0.5:
-    resolution: {integrity: sha512-aLoe0o/UuV05YlP/fBpy8DJOMINyMtgV49BcbtWaD44mI7wpFVCny02leHoKUo6ULofvHgiIrsIG1q2yH0PO2A==}
+  /@webview-bridge/web@1.0.6:
+    resolution: {integrity: sha512-lVXomLfP0AeP33i3oJqsPRTISsagCgQm04g1GK+twWXeJqPXlhGfpzEZ6vDlMseRNcYRV9hgL315qbw/lHY+nA==}
     dev: false
 
   /abort-controller@3.0.0:
