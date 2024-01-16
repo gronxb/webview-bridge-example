@@ -13,11 +13,19 @@ function App() {
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    if (nativeMethod.isNativeMethodAvailable("getMessage")) {
-      nativeMethod.getMessage().then((message) => {
+    const init = async () => {
+      const version = await nativeMethod.getBridgeVersion();
+      if (version >= 2) {
+        const message = await nativeMethod.getMessage();
         setMessage(message);
-      });
-    }
+      } else {
+        // Support for old native methods with `loose`
+        const oldVersionMessage =
+          await nativeMethod.loose.getOldVersionMessage();
+        setMessage(oldVersionMessage);
+      }
+    };
+    init();
   }, []);
 
   return (
