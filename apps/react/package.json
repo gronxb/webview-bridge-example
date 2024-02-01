@@ -1,5 +1,5 @@
 {
-  "name": "@webview-bridge/example-web",
+  "name": "@webview-bridge/example-react",
   "types": "./src/bridge.ts",
   "private": true,
   "version": "0.0.0",
