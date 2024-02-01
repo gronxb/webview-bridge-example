@@ -7,6 +7,10 @@ import { useEffect, useState } from "react";
 
 const nativeMethod = linkNativeMethod<AppBridge>({
   throwOnError: ["openInAppBrowser"],
+  onReady: async (method) => {
+    console.log("onReady");
+    console.log(await method.getMessage());
+  },
 });
 
 function App() {
