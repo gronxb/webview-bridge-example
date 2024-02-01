@@ -1,53 +1,69 @@
 import "./App.css";
-import "./bridge"; // execute registerWebMethod
 
 import type { AppBridge } from "@webview-bridge/example-native";
-import { linkNativeMethod } from "@webview-bridge/web";
-import { useEffect, useState } from "react";
+import { useBridge } from "@webview-bridge/react";
+import { linkBridge } from "@webview-bridge/web";
 
-const nativeMethod = linkNativeMethod<AppBridge>({
-  throwOnError: ["openInAppBrowser"],
-  onReady: async (method) => {
-    console.log("onReady");
-    console.log(await method.getMessage());
+const bridge = linkBridge<AppBridge>({
+  throwOnError: true,
+  onReady: () => {
+    console.log("nativeMethod is ready");
   },
 });
 
-function App() {
-  const [message, setMessage] = useState("");
+function Count() {
+  // render when only count changed
+  const count = useBridge(bridge.store, (state) => state.count);
 
-  useEffect(() => {
-    const init = async () => {
-      const version = await nativeMethod.getBridgeVersion();
-      if (version >= 2) {
-        const message = await nativeMethod.getMessage();
-        setMessage(message);
-      } else {
-        // Support for old native methods with `loose`
-        const oldVersionMessage =
-          await nativeMethod.loose.getOldVersionMessage();
-        setMessage(oldVersionMessage);
-      }
-    };
-    init();
-  }, []);
+  return <p>Native Count: {count}</p>;
+}
+
+function DataText() {
+  // render when only 'data.text' changed
+  const text = useBridge(bridge.store, (state) => state.data.text);
 
   return (
     <div>
-      <h1>This is a web page.</h1>
-      <h1>{message}</h1>
+      <p>Native Data Text: {text}</p>
+      <input
+        type="text"
+        value={text}
+        onChange={(e) => bridge.setDataText(e.target.value)}
+      />
+    </div>
+  );
+}
+
+function App() {
+  const increase = useBridge(bridge.store, (state) => state.increase);
+
+  return (
+    <div>
+      <div>
+        {`isWebViewBridgeAvailable: ${String(bridge.isWebViewBridgeAvailable)}`}
+      </div>
+      <h2>This is WebView</h2>
+
       <button
         onClick={() => {
-          nativeMethod.openInAppBrowser(
-            "https://github.com/gronxb/webview-bridge",
-          );
+          if (bridge.isNativeMethodAvailable("openInAppBrowser") === true) {
+            bridge.openInAppBrowser("https://github.com/gronxb/webview-bridge");
+          }
         }}
       >
         open InAppBrowser
       </button>
-      <p>{`isWebViewBridgeAvailable: ${String(
-        nativeMethod.isWebViewBridgeAvailable,
-      )}`}</p>
+
+      <Count />
+      <button
+        onClick={() => {
+          increase(); // or bridge.increase()
+        }}
+      >
+        Increase from web
+      </button>
+
+      <DataText />
     </div>
   );
 }

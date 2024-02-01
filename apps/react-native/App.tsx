@@ -5,15 +5,57 @@
  * @format
  */
 
-import { WebBridge } from "@webview-bridge/example-web";
 import {
+  bridge,
   type BridgeWebView,
   createWebView,
+  useBridge,
 } from "@webview-bridge/react-native";
-import React, { useState } from "react";
-import { Button, SafeAreaView, Text } from "react-native";
+import React from "react";
+import { Button, SafeAreaView, Text, TextInput, View } from "react-native";
+import InAppBrowser from "react-native-inappbrowser-reborn";
 
-import { appBridge } from "./src/bridge";
+type AppBridgeState = {
+  getMessage(): Promise<string>;
+  openInAppBrowser(url: string): Promise<void>;
+  count: number;
+  increase(): Promise<void>;
+  data: {
+    text: string;
+  };
+  setDataText(text: string): Promise<void>;
+};
+
+export const appBridge = bridge<AppBridgeState>(({ get, set }) => ({
+  async getMessage() {
+    return "I'm from native" as const;
+  },
+  async openInAppBrowser(url: string) {
+    if (await InAppBrowser.isAvailable()) {
+      await InAppBrowser.open(url);
+    }
+  },
+
+  data: {
+    text: "",
+  },
+  count: 0,
+  async increase() {
+    set({
+      count: get().count + 1,
+    });
+  },
+  async setDataText(text) {
+    set({
+      data: {
+        text,
+      },
+    });
+  },
+}));
+
+// It is exported via the package.json type field.
+export type AppBridge = typeof appBridge;
 
 export const { WebView, linkWebMethod } = createWebView({
   bridge: appBridge,
@@ -23,24 +65,39 @@ export const { WebView, linkWebMethod } = createWebView({
   },
 });
 
-const WebMethod = linkWebMethod<WebBridge>();
+function Count() {
+  // render when count changed
+  const count = useBridge(appBridge, (state) => state.count);
+
+  return <Text>Native Count: {count}</Text>;
+}
+
+function Input() {
+  const { data, setDataText } = useBridge(appBridge);
+
+  return (
+    <View style={{ justifyContent: "center", alignItems: "center" }}>
+      <Text
+        style={{
+          marginBottom: 10,
+          textAlign: "center",
+        }}
+      >
+        Native Data Text: {data.text}
+      </Text>
+      <TextInput
+        value={data.text}
+        onChangeText={setDataText}
+        style={{ borderWidth: 1, minWidth: "50%", maxWidth: "50%" }}
+      />
+    </View>
+  );
+}
 
 function App(): JSX.Element {
-  const [value, setValue] = useState(0);
-
   const webviewRef = React.useRef<BridgeWebView>(null);
 
-  const handleWebAlert = () => {
-    if (WebMethod.current.isReady) {
-      WebMethod.current.alert("This called from webview");
-    }
-  };
-
-  const handleSum = () => {
-    if (WebMethod.current.isReady) {
-      WebMethod.current.sum(1, 2).then((result) => setValue(result));
-    }
-  };
+  const increase = useBridge(appBridge, (state) => state.increase);
 
   return (
     <SafeAreaView style={{ height: "100%" }}>
@@ -49,15 +106,25 @@ function App(): JSX.Element {
         source={{
           uri: "http://localhost:5173",
         }}
-        style={{ height: "100%", flex: 1, width: "100%" }}
+        style={{ height: "50%", width: "100%" }}
       />
-      <Button onPress={handleWebAlert} title="Web Alert" />
-      {value > 0 && (
-        <Text style={{ alignSelf: "center" }}>
-          This value called from webview 1 + 2 = {value}
+
+      <View
+        style={{
+          justifyContent: "center",
+          alignItems: "center",
+          height: "50%",
+        }}
+      >
+        <Text style={{ fontSize: 20, fontWeight: "700", marginBottom: 10 }}>
+          This is Native
         </Text>
-      )}
-      <Button onPress={handleSum} title="Web Sum" />
+
+        <Count />
+        <Button onPress={() => increase()} title="Increase From Native" />
+
+        <Input />
+      </View>
     </SafeAreaView>
   );
 }
