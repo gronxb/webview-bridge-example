@@ -51,11 +51,11 @@ importers:
   apps/react:
     dependencies:
       '@webview-bridge/react':
-        specifier: 1.3.2
-        version: 1.3.2(@webview-bridge/web@1.3.2)(react@18.2.0)
+        specifier: 1.3.3
+        version: 1.3.3(@webview-bridge/web@1.3.3)(react@18.2.0)
       '@webview-bridge/web':
-        specifier: 1.3.2
-        version: 1.3.2
+        specifier: 1.3.3
+        version: 1.3.3
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -97,8 +97,8 @@ importers:
   apps/react-native:
     dependencies:
       '@webview-bridge/react-native':
-        specifier: 1.3.2
-        version: 1.3.2(react-native-webview@13.6.4)(react@18.2.0)
+        specifier: 1.3.3
+        version: 1.3.3(react-native-webview@13.6.4)(react@18.2.0)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -164,11 +164,11 @@ importers:
   apps/vue:
     dependencies:
       '@webview-bridge/vue':
-        specifier: 1.3.2
-        version: 1.3.2(@webview-bridge/web@1.3.2)(vue@3.4.15)
+        specifier: 1.3.3
+        version: 1.3.3(@webview-bridge/web@1.3.3)(vue@3.4.15)
       '@webview-bridge/web':
-        specifier: 1.3.2
-        version: 1.3.2
+        specifier: 1.3.3
+        version: 1.3.3
       vue:
         specifier: ^3.3.11
         version: 3.4.15(typescript@5.3.3)
@@ -3411,8 +3411,8 @@ packages:
   /@vue/shared@3.4.15:
     resolution: {integrity: sha512-KzfPTxVaWfB+eGcGdbSf4CWdaXcGDqckoeXUh7SB3fZdEtzPCK2Vq9B/lRRL3yutax/LWITz+SwvgyOxz5V75g==}
 
-  /@webview-bridge/react-native@1.3.2(react-native-webview@13.6.4)(react@18.2.0):
-    resolution: {integrity: sha512-OcpZ+ULkk2ORx5ouC/Guz9akWuoCF7zroxa8t32XYd0pWE6xSQfmIdSK+4vTiJpooeV8p4zU+8+xeDqjeeDN1w==}
+  /@webview-bridge/react-native@1.3.3(react-native-webview@13.6.4)(react@18.2.0):
+    resolution: {integrity: sha512-eRQ2CV7EDJvRN1TMFPHAFpHeh+wugz6sr6gJY29Qv+B9BefilHza0GV2hY9ndODzKGMLUkpzGZS7g+8a/u1UKw==}
     peerDependencies:
       react: '*'
       react-native-webview: '*'
@@ -3422,8 +3422,8 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@webview-bridge/react@1.3.2(@webview-bridge/web@1.3.2)(react@18.2.0):
-    resolution: {integrity: sha512-3HCU80Bj7KjTGrH8W4oE/NKvi9x5FV5g196BcpRYPw7Jpf6DhMVTmAOVL1cMjAdDfmKIcj0qyJZiSZ4GxGG2Sg==}
+  /@webview-bridge/react@1.3.3(@webview-bridge/web@1.3.3)(react@18.2.0):
+    resolution: {integrity: sha512-ou9TYQ7PGTFs6DDOOFcxe9+nkT/MhBmgKKUTYERbCAxZBbgI0TZy9XO0XUg7ctRMkqTdGG9cSxuEoi+PH5gi4g==}
     peerDependencies:
       '@webview-bridge/web': '>=1.2.0'
       react: '>=16.8'
@@ -3431,23 +3431,23 @@ packages:
       react:
         optional: true
     dependencies:
-      '@webview-bridge/web': 1.3.2
+      '@webview-bridge/web': 1.3.3
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@webview-bridge/vue@1.3.2(@webview-bridge/web@1.3.2)(vue@3.4.15):
-    resolution: {integrity: sha512-ZQn3K05IdUdOHhElrva2Nwd7uMfof9kqsqLgK4evLujRCptzlijJqwOz5aG3L4uYMN9LhHyB9l6TlxZDseO04g==}
+  /@webview-bridge/vue@1.3.3(@webview-bridge/web@1.3.3)(vue@3.4.15):
+    resolution: {integrity: sha512-90nOv9eCRnJJ0yKooi+n5FO9f3GjwxbXnHtIsYlcvz0GfSBFWDc1JK9tp1lrvxJxGItCEun2JRAf/ehrngWzfw==}
     peerDependencies:
       '@webview-bridge/web': '>=1.2.0'
       vue: '>=2.7'
     dependencies:
-      '@webview-bridge/web': 1.3.2
+      '@webview-bridge/web': 1.3.3
       vue: 3.4.15(typescript@5.3.3)
     dev: false
 
-  /@webview-bridge/web@1.3.2:
-    resolution: {integrity: sha512-x9XhkhjIoN9cdwbi4YVt17u8a2hNU3b1Wjn8iSQDvAe+HFECTdkhTgoDWJ2hkS6oQsjMXnRQNv3/tKE9K7soEA==}
+  /@webview-bridge/web@1.3.3:
+    resolution: {integrity: sha512-onk4l3SsWTq0LZvfZ3JvVUvGGVE9BXF0G8BNmS953WmdV7Hc8RBIISNbaSjIM4jqCafGSDEM54JHoPI4utu8KA==}
     dev: false
 
   /abort-controller@3.0.0:
