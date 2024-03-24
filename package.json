@@ -26,7 +26,9 @@
     "ios": "pnpm --filter @webview-bridge/example-native ios",
     "start": "pnpm --filter @webview-bridge/example-native start --reset-cache",
     "android": "pnpm --filter @webview-bridge/example-native android",
-    "web": "pnpm --filter @webview-bridge/example-web dev"
+    "web": "pnpm --filter @webview-bridge/example-web dev",
+    "test:type": "pnpm -r test:type",
+    "build": "pnpm -r build"
   },
   "packageManager": "pnpm@8.10.3"
 }
