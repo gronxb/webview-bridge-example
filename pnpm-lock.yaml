@@ -51,11 +51,11 @@ importers:
   apps/next:
     dependencies:
       '@webview-bridge/react':
-        specifier: 1.4.0
-        version: 1.4.0(@webview-bridge/web@1.4.0)(react@18.2.0)
+        specifier: 1.4.1
+        version: 1.4.1(@webview-bridge/web@1.4.1)(react@18.2.0)
       '@webview-bridge/web':
-        specifier: 1.4.0
-        version: 1.4.0
+        specifier: 1.4.1
+        version: 1.4.1
       next:
         specifier: 14.1.4
         version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
@@ -216,11 +216,11 @@ importers:
         specifier: ^2.8.1
         version: 2.8.1(typescript@5.3.3)
       '@webview-bridge/react':
-        specifier: 1.4.0
-        version: 1.4.0(@webview-bridge/web@1.4.0)(react@18.2.0)
+        specifier: 1.4.1
+        version: 1.4.1(@webview-bridge/web@1.4.1)(react@18.2.0)
       '@webview-bridge/web':
-        specifier: 1.4.0
-        version: 1.4.0
+        specifier: 1.4.1
+        version: 1.4.1
       isbot:
         specifier: ^4.1.0
         version: 4.4.0
@@ -4736,8 +4736,8 @@ packages:
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
 
-  /@webview-bridge/react@1.4.0(@webview-bridge/web@1.4.0)(react@18.2.0):
-    resolution: {integrity: sha512-TPxNqjkrC+pJzWt5YrbcNclUUVzi9FWBCBrX2IOyGssToGdkc90/iy04Gexx1VWVGJiIFGVkO2moYyNueHzrLg==}
+  /@webview-bridge/react@1.4.1(@webview-bridge/web@1.4.1)(react@18.2.0):
+    resolution: {integrity: sha512-13ZFz1jqDyElVoJ0GYfHnMgjsrCxcQfozWTqjYxBpFChLCMdhOjxbIsIJ9h6jwKKfvIyMH8orlRpJCB5OrXEjQ==}
     peerDependencies:
       '@webview-bridge/web': '>=1.2.0'
       react: '>=16.8'
@@ -4745,7 +4745,7 @@ packages:
       react:
         optional: true
     dependencies:
-      '@webview-bridge/web': 1.4.0
+      '@webview-bridge/web': 1.4.1
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false
@@ -4764,8 +4764,8 @@ packages:
     resolution: {integrity: sha512-onk4l3SsWTq0LZvfZ3JvVUvGGVE9BXF0G8BNmS953WmdV7Hc8RBIISNbaSjIM4jqCafGSDEM54JHoPI4utu8KA==}
     dev: false
 
-  /@webview-bridge/web@1.4.0:
-    resolution: {integrity: sha512-OXmJtjt25kYR+zIKPCjHci+zth+jt9vvshNIn2r+lskbxWdlz6gW0sVal7QXBp8/wmHGG84F1rpSoQgDUrTakA==}
+  /@webview-bridge/web@1.4.1:
+    resolution: {integrity: sha512-3J8LVUZGz+IRjrYGC/bKCWLHfrOVLmeRpVQqQN7NELAY7LHSSbDex1qldXLLLzEfeKPrHtOMTPfmvpfESfC8pA==}
     dev: false
 
   /@zxing/text-encoding@0.9.0:
