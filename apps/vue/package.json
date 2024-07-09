@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@webview-bridge/vue": "1.4.5",
-    "@webview-bridge/web": "1.4.5",
+    "@webview-bridge/vue": "1.5.2",
+    "@webview-bridge/web": "1.5.2",
     "vue": "^3.3.11"
   },
   "devDependencies": {

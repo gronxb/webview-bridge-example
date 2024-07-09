@@ -5,65 +5,11 @@
  * @format
  */
 
-import {
-  bridge,
-  type BridgeWebView,
-  createWebView,
-  useBridge,
-} from "@webview-bridge/react-native";
+import { type BridgeWebView, useBridge } from "@webview-bridge/react-native";
 import React from "react";
 import { Button, SafeAreaView, Text, TextInput, View } from "react-native";
-import InAppBrowser from "react-native-inappbrowser-reborn";
 
-type AppBridgeState = {
-  getMessage(): Promise<string>;
-  openInAppBrowser(url: string): Promise<void>;
-  count: number;
-  increase(): Promise<void>;
-  data: {
-    text: string;
-  };
-  setDataText(text: string): Promise<void>;
-};
-
-export const appBridge = bridge<AppBridgeState>(({ get, set }) => ({
-  async getMessage() {
-    return "I'm from native" as const;
-  },
-  async openInAppBrowser(url: string) {
-    if (await InAppBrowser.isAvailable()) {
-      await InAppBrowser.open(url);
-    }
-  },
-
-  data: {
-    text: "",
-  },
-  count: 0,
-  async increase() {
-    set({
-      count: get().count + 1,
-    });
-  },
-  async setDataText(text) {
-    set({
-      data: {
-        text,
-      },
-    });
-  },
-}));
-
-// It is exported via the package.json type field.
-export type AppBridge = typeof appBridge;
-
-export const { WebView, linkWebMethod } = createWebView({
-  bridge: appBridge,
-  debug: true,
-  fallback: (method) => {
-    console.warn(`Method '${method}' not found in native`);
-  },
-});
+import { appBridge, postMessage, WebView } from "./src/bridge";
 
 function Count() {
   // render when count changed
@@ -125,6 +71,15 @@ function App(): JSX.Element {
 
         <Input />
       </View>
+
+      <Button
+        onPress={() =>
+          postMessage("setWebMessage", {
+            text: Math.random().toString(),
+          })
+        }
+        title="setWebMessage"
+      />
     </SafeAreaView>
   );
 }
