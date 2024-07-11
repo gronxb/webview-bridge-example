@@ -51,11 +51,11 @@ importers:
   apps/next:
     dependencies:
       '@webview-bridge/react':
-        specifier: 1.5.2
-        version: 1.5.2(@webview-bridge/web@1.5.2)(react@18.2.0)
+        specifier: 1.6.1
+        version: 1.6.1(@webview-bridge/web@1.6.1)(react@18.2.0)
       '@webview-bridge/web':
-        specifier: 1.5.2
-        version: 1.5.2
+        specifier: 1.6.1
+        version: 1.6.1
       next:
         specifier: 14.1.4
         version: 14.1.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -94,11 +94,11 @@ importers:
   apps/react:
     dependencies:
       '@webview-bridge/react':
-        specifier: 1.5.2
-        version: 1.5.2(@webview-bridge/web@1.5.2)(react@18.2.0)
+        specifier: 1.6.1
+        version: 1.6.1(@webview-bridge/web@1.6.1)(react@18.2.0)
       '@webview-bridge/web':
-        specifier: 1.5.2
-        version: 1.5.2
+        specifier: 1.6.1
+        version: 1.6.1
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -140,8 +140,8 @@ importers:
   apps/react-native:
     dependencies:
       '@webview-bridge/react-native':
-        specifier: 1.5.2
-        version: 1.5.2(react-native-webview@13.6.4(react-native@0.72.5(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0))(react@18.2.0)(zod@3.23.8)
+        specifier: 1.6.1
+        version: 1.6.1(react-native-webview@13.6.4(react-native@0.72.5(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0))(react@18.2.0)(zod@3.23.8)
       react:
         specifier: 18.2.0
         version: 18.2.0
@@ -283,11 +283,11 @@ importers:
   apps/vue:
     dependencies:
       '@webview-bridge/vue':
-        specifier: 1.5.2
-        version: 1.5.2(@webview-bridge/web@1.5.2)(vue@3.4.15(typescript@5.3.3))
+        specifier: 1.6.1
+        version: 1.6.1(@webview-bridge/web@1.6.1)(vue@3.4.15(typescript@5.3.3))
       '@webview-bridge/web':
-        specifier: 1.5.2
-        version: 1.5.2
+        specifier: 1.6.1
+        version: 1.6.1
       vue:
         specifier: ^3.3.11
         version: 3.4.15(typescript@5.3.3)
@@ -2600,8 +2600,8 @@ packages:
   '@web3-storage/multipart-parser@1.0.0':
     resolution: {integrity: sha512-BEO6al7BYqcnfX15W2cnGR+Q566ACXAT9UQykORCWW80lmkpWsnEob6zJS1ZVBKsSJC8+7vJkHwlp+lXG1UCdw==}
 
-  '@webview-bridge/react-native@1.5.2':
-    resolution: {integrity: sha512-YylmvdXnmZgtLtMCfBWGbRNonBYhRTz3U4XVo1Y8xZEw+0/jQUPy13VCQxOO/Fg673IOMH7B8FCiKZ2z/Ggyrw==}
+  '@webview-bridge/react-native@1.6.1':
+    resolution: {integrity: sha512-YBovAPOhiKSgp2mhor39TCaplP676FnGBWEUebbil5bL5R1nBKpYM6TadCJsGdrM12HXKvZX7fN8pZgAp2kn7g==}
     peerDependencies:
       react: '*'
       react-native-webview: '*'
@@ -2625,26 +2625,26 @@ packages:
       react:
         optional: true
 
-  '@webview-bridge/react@1.5.2':
-    resolution: {integrity: sha512-09b5mx1yeXrSWtMFXhafxTXDENkdNYv8a/dYXm9zm+iVzWcili53PWfHzF2PT58Po6WO0tYhiw+QSULbnV9U/Q==}
+  '@webview-bridge/react@1.6.1':
+    resolution: {integrity: sha512-lHdN1I+DL4fbR2zlcH853W9xfW0GUOdFxjn118NG0zhOF+WLN51pfiP6jyHZDdK41J/7UmEaH7Si1fSW7rbc3A==}
     peerDependencies:
-      '@webview-bridge/web': '>=1.2.0'
+      '@webview-bridge/web': '*'
       react: '>=16.8'
     peerDependenciesMeta:
       react:
         optional: true
 
-  '@webview-bridge/vue@1.5.2':
-    resolution: {integrity: sha512-Y/3n+C7IFK19TlfuiuPGTdGNFTf/8uFZAUFdIvoRSc6ajQ9zIWrVZlUTa6KZQZlDZCTC/0doabO8wz5riKZ4cw==}
+  '@webview-bridge/vue@1.6.1':
+    resolution: {integrity: sha512-+aR203vsJHkCiebAv1q7uFgcEX1LJFIyxMV0Nhb+fJ6H36iLUKipOUyNQZyDgQhI3fV0MnH8laveu7WVTQx/HA==}
     peerDependencies:
-      '@webview-bridge/web': '>=1.2.0'
+      '@webview-bridge/web': '*'
       vue: '>=2.7'
 
   '@webview-bridge/web@1.4.5':
     resolution: {integrity: sha512-mbgvQOtLOIsxu1RMMm8yqw/CHne8wFnWKtuIZrRRlcK63dcLnsQUlMnIdGWSt892yefb+lxGp4wPtDgXW8W/4Q==}
 
-  '@webview-bridge/web@1.5.2':
-    resolution: {integrity: sha512-LmqYRKa76OGrOLKGU9AGUZM/RC00qqHs7bkjNI+HCUANV3yoDbq/NNHXUMwTxq/+zMuJRuQo33MuVNDZSiONlg==}
+  '@webview-bridge/web@1.6.1':
+    resolution: {integrity: sha512-G5HYpIokA+38qIr68u6d7TQELByTeZKXqq0BPHErXaescMi3f6FtiIASHcPLj8z4lENHCMYjebnw7h/Melw3og==}
 
   '@zxing/text-encoding@0.9.0':
     resolution: {integrity: sha512-U/4aVJ2mxI0aDNI8Uq0wEhMgY+u4CNtEb0om3+y3+niDAsoTCOB33UF0sxpzqzdqXLqmvc+vZyAt4O8pPdfkwA==}
@@ -6352,6 +6352,11 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
 
+  use-sync-external-store@1.2.2:
+    resolution: {integrity: sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+
   util-deprecate@1.0.2:
     resolution: {integrity: sha512-EPD5q1uXyFxJpCrLnCc1nHnq3gOa6DZBocAIiI2TaSCA7VCJ1UJDMagCzIkXNsUYfD1daK//LTEQ8xiIbrHtcw==}
 
@@ -9297,11 +9302,11 @@ snapshots:
 
   '@web3-storage/multipart-parser@1.0.0': {}
 
-  '@webview-bridge/react-native@1.5.2(react-native-webview@13.6.4(react-native@0.72.5(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0))(react@18.2.0)(zod@3.23.8)':
+  '@webview-bridge/react-native@1.6.1(react-native-webview@13.6.4(react-native@0.72.5(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0))(react@18.2.0)(zod@3.23.8)':
     dependencies:
       react: 18.2.0
       react-native-webview: 13.6.4(react-native@0.72.5(@babel/core@7.23.7)(@babel/preset-env@7.23.7(@babel/core@7.23.7))(react@18.2.0))(react@18.2.0)
-      use-sync-external-store: 1.2.0(react@18.2.0)
+      use-sync-external-store: 1.2.2(react@18.2.0)
     optionalDependencies:
       zod: 3.23.8
 
@@ -9312,21 +9317,21 @@ snapshots:
     optionalDependencies:
       react: 18.2.0
 
-  '@webview-bridge/react@1.5.2(@webview-bridge/web@1.5.2)(react@18.2.0)':
+  '@webview-bridge/react@1.6.1(@webview-bridge/web@1.6.1)(react@18.2.0)':
     dependencies:
-      '@webview-bridge/web': 1.5.2
-      use-sync-external-store: 1.2.0(react@18.2.0)
+      '@webview-bridge/web': 1.6.1
+      use-sync-external-store: 1.2.2(react@18.2.0)
     optionalDependencies:
       react: 18.2.0
 
-  '@webview-bridge/vue@1.5.2(@webview-bridge/web@1.5.2)(vue@3.4.15(typescript@5.3.3))':
+  '@webview-bridge/vue@1.6.1(@webview-bridge/web@1.6.1)(vue@3.4.15(typescript@5.3.3))':
     dependencies:
-      '@webview-bridge/web': 1.5.2
+      '@webview-bridge/web': 1.6.1
       vue: 3.4.15(typescript@5.3.3)
 
   '@webview-bridge/web@1.4.5': {}
 
-  '@webview-bridge/web@1.5.2': {}
+  '@webview-bridge/web@1.6.1': {}
 
   '@zxing/text-encoding@0.9.0':
     optional: true
@@ -14101,6 +14106,10 @@ snapshots:
       punycode: 2.3.1
 
   use-sync-external-store@1.2.0(react@18.2.0):
+    dependencies:
+      react: 18.2.0
+
+  use-sync-external-store@1.2.2(react@18.2.0):
     dependencies:
       react: 18.2.0
 

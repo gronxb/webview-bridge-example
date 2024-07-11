@@ -1,5 +1,11 @@
 "use client";
-import { useBridgeStatus, useBridgeStore } from "@/providers/BridgeProvider";
+import { useState } from "react";
+
+import {
+  useBridgeEventListener,
+  useBridgeStatus,
+  useBridgeStore,
+} from "@/providers/BridgeProvider";
 
 function Count() {
   const count = useBridgeStore((state) => state.count);
@@ -30,19 +36,25 @@ export default function BridgeHome() {
     increase: state.increase,
     openInAppBrowser: state.openInAppBrowser,
   }));
-  const { isNativeMethodAvailable, isWebViewBridgeAvailable } =
-    useBridgeStatus();
+  const status = useBridgeStatus();
+
+  const [message, setMessage] = useState("");
+
+  useBridgeEventListener("setWebMessage", (args) => {
+    setMessage(args.text);
+  });
 
   return (
     <div>
+      {message}
       <div>
-        {`isWebViewBridgeAvailable: ${String(isWebViewBridgeAvailable)}`}
+        {`isWebViewBridgeAvailable: ${String(status.isWebViewBridgeAvailable)}`}
       </div>
       <h2>This is WebView</h2>
 
       <button
         onClick={() => {
-          if (isNativeMethodAvailable("openInAppBrowser")) {
+          if (status.isNativeMethodAvailable("openInAppBrowser")) {
             openInAppBrowser("https://github.com/gronxb/webview-bridge");
           }
         }}

@@ -9,8 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@webview-bridge/react": "1.5.2",
-    "@webview-bridge/web": "1.5.2",
+    "@webview-bridge/react": "1.6.1",
+    "@webview-bridge/web": "1.6.1",
     "next": "14.1.4",
     "react": "^18",
     "react-dom": "^18"

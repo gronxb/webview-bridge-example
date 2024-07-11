@@ -50,7 +50,7 @@ function App(): JSX.Element {
       <WebView
         ref={webviewRef}
         source={{
-          uri: "http://localhost:5173",
+          uri: "http://localhost:3000",
         }}
         style={{ height: "50%", width: "100%" }}
       />
